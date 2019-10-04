@@ -10,7 +10,6 @@ const logger       = require('morgan');
 const path         = require('path');
 
 const cors = require('cors')
-var app = express();
 
 app.use(cors({
   origin: function(origin, callback) {
