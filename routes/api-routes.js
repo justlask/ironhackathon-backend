@@ -5,17 +5,24 @@ const seeds = require('../bin/newseeds.js')
 const cors = require('cors')
 var app = express();
 
-app.use(cors())
-
-router.get('/seeditfam', async (req,res,next) => {
-  seeds.forEach(seed => {
-    Rooms.create(seed).then(data => {
-      res.json(data)
-    }).catch(err =>  next(err))
-  })
-})
 
 
+app.use(cors({
+  origin: function(origin, callback) {
+      return callback(null, true);
+  },
+  optionsSuccessStatus: 200,
+  credentials: true
+}));
+
+
+// router.get('/seeditfam', async (req,res,next) => {
+//   seeds.forEach(seed => {
+//     Rooms.create(seed).then(data => {
+//       res.json(data)
+//     }).catch(err =>  next(err))
+//   })
+// })
 
 
 router.get('/', (req,res,next) => {
