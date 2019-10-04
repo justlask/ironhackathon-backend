@@ -2,18 +2,6 @@ const express = require('express');
 const router  = express.Router();
 const Rooms = require('../models/Rooms')
 const seeds = require('../bin/newseeds.js')
-const cors = require('cors')
-var app = express();
-
-
-
-app.use(cors({
-  origin: function(origin, callback) {
-      return callback(null, true);
-  },
-  optionsSuccessStatus: 200,
-  credentials: true
-}));
 
 
 // router.get('/seeditfam', async (req,res,next) => {
